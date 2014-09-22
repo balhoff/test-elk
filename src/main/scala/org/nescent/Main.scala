@@ -10,7 +10,7 @@ import scala.collection.JavaConversions._
 
 object Main extends App {
 
-  val part_of = ObjectProperty("")
+  val part_of = ObjectProperty("http://purl.obolibrary.org/obo/BFO_0000050")
   val class1 = Class("http://purl.obolibrary.org/obo/UBERON_0002398")
   val class2 = Class("http://purl.obolibrary.org/obo/UBERON_0000955")
 
