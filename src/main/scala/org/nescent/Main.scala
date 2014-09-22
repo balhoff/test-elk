@@ -2,11 +2,12 @@ package org.nescent
 
 import java.io.File
 
+import scala.collection.JavaConversions._
+
+import org.phenoscape.scowl.OWL._
 import org.semanticweb.elk.owlapi.ElkReasonerFactory
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.reasoner.InferenceType
-import org.phenoscape.scowl.OWL._
-import scala.collection.JavaConversions._
 
 object Main extends App {
 
@@ -20,8 +21,8 @@ object Main extends App {
   val reasoner = new ElkReasonerFactory().createReasoner(ontology)
   reasoner.precomputeInferences(InferenceType.CLASS_HIERARCHY)
   println("Class1")
-  reasoner.getSubClasses(part_of some class1, false).getFlattened.foreach(println(_))
+  reasoner.getSubClasses(part_of some class1, false).getFlattened.foreach(println)
   println("Class2")
-  reasoner.getSubClasses(part_of some class2, false).getFlattened.foreach(println(_))
+  reasoner.getSubClasses(part_of some class2, false).getFlattened.foreach(println)
 
 }
