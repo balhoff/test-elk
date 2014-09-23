@@ -4,12 +4,18 @@ import java.io.File
 
 import scala.collection.JavaConversions._
 
+import org.apache.log4j.BasicConfigurator
+import org.apache.log4j.Level
+import org.apache.log4j.Logger
 import org.phenoscape.scowl.OWL._
 import org.semanticweb.elk.owlapi.ElkReasonerFactory
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.reasoner.InferenceType
 
 object Main extends App {
+
+  BasicConfigurator.configure()
+  Logger.getRootLogger().setLevel(Level.DEBUG)
 
   val part_of = ObjectProperty("http://purl.obolibrary.org/obo/BFO_0000050")
   val class1 = Class("http://purl.obolibrary.org/obo/UBERON_0002398")
